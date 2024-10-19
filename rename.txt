@@ -1089,10 +1089,10 @@ shared.Load("Utils", "ConnectionsFuncs")
 
 --// Tabs \\--
 Script.Tabs = {
-    Main = shared.Window:AddTab("Main"),
-    Exploits = shared.Window:AddTab("Exploits"),
-    Visuals = shared.Window:AddTab("Visuals"),
-    Floor = shared.Window:AddTab("Floor")
+    Main = shared.Window:AddTab("主要功能"),
+    Exploits = shared.Window:AddTab("移除功能"),
+    Visuals = shared.Window:AddTab("透视通知"),
+    Floor = shared.Window:AddTab("楼层功能")
 }
 
 shared.Load("Tabs", "Main")
