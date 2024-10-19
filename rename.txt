@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 OrionLib:MakeNotification({
                     Name = "mspaint V3汉化",
                     Content = "欢迎使用【修复补缺:小玄奘】",
-                    Time = 2
+                    Time = 5
                 })    
                 
                 local sound = Instance.new("Sound", workspace)
@@ -14,7 +14,7 @@ wait(1)
 OrionLib:MakeNotification({
                     Name = "你的注入器："..identifyexecutor(),
                     Content = "测试",
-                    Time = 2
+                    Time = 5
                 })
                 
                 local sound = Instance.new("Sound", workspace)
@@ -1870,7 +1870,7 @@ shared.Connect:GiveSignal(shared.RunService.RenderStepped:Connect(function()
             if HoldingItem and not shared.isnetworkowner(HoldingItem) then
                 shared.Notify:Alert({
                     Title = "Banana/Jeff Throw",
-                    Description = "You are no longer holding the item due to network owner change!",
+                    Description = "由于网络所有者变更，您不再持有该物品！",
                 })
                 Script.Temp.HoldingItem = nil
             end
@@ -10339,11 +10339,13 @@ function UICreator:CreateSettingsTab()
     end)
     MenuGroup:AddButton("Unload", function() shared.Library:Unload() end)
 
-    CreditsGroup:AddLabel("Developers:")
-    CreditsGroup:AddLabel("upio - owner")
-    CreditsGroup:AddLabel("deividcomsono - main script dev")
+    CreditsGroup:AddLabel("开发者:")
+    CreditsGroup:AddLabel("upio -所有者")
+    CreditsGroup:AddLabel("主脚本开发")
     CreditsGroup:AddLabel("mstudio45")
     CreditsGroup:AddLabel("bacalhauz")
+    CreditsGroup:AddLabel("汉化作者:Station【MS开发团队其中一人】")
+    CreditsGroup:AddLabel("汉化修补:小玄奘【XK脚本中心作者】")
 
     shared.Library.ToggleKeybind = shared.Options.MenuKeybind
 
