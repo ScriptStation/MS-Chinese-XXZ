@@ -409,9 +409,9 @@ shared.Load("Utils", "ESP")
 
 --// Tabs \\--
 Script.Tabs = {
-    Main = shared.Window:AddTab("Main"),
-    Exploits = shared.Window:AddTab("Exploits"),
-    Visuals = shared.Window:AddTab("Visuals"),
+    Main = shared.Window:AddTab("主要的"),
+    Exploits = shared.Window:AddTab("移除类"),
+    Visuals = shared.Window:AddTab("怪物物品"),
 }
 
 shared.Load("Tabs", "Main")
@@ -3331,62 +3331,62 @@ local Script = shared.Script
 local Tabs = Script.Tabs
 
 --// Exploits \\--
-local AntiEntityGroupBox = Tabs.Exploits:AddLeftGroupbox("反实体") do
+local AntiEntityGroupBox = Tabs.Exploits:AddLeftGroupbox("防怪物伤害") do
     AntiEntityGroupBox:AddToggle("AntiDread", {
-        Text = "反dread",
+        Text = "移除dread伤害或跳杀",
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiHalt", {
-        Text = "反Halt",
+        Text = "移除Halt",
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiScreech", {
-        Text = "反Screech",
+        Text = "移除Screech",
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiDupe", {
-        Text = "反" .. (Script.IsBackdoor and "Vacuum" or "Dupe"),
+        Text = "移除" .. (Script.IsBackdoor and "Vacuum" or "假门"),
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiEyes", {
-        Text = "反" .. (Script.IsBackdoor and "Lookman" or "Eyes"),
+        Text = "移除" .. (Script.IsBackdoor and "Lookman伤害" or "Eyes伤害"),
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiSnare", {
-        Text = "反捕兽夹",
+        Text = "移除夹子伤害",
         Default = false
     })
 
     AntiEntityGroupBox:AddToggle("AntiHearing", {
-        Text = "反Figure听觉",
+        Text = "移除Figure听觉",
         Default = false,
         Visible = not Script.IsFools
     })
 end
 
-local TrollingGroupBox = Tabs.Exploits:AddLeftGroupbox("坑人") do
+local TrollingGroupBox = Tabs.Exploits:AddLeftGroupbox("娱乐") do
     TrollingGroupBox:AddToggle("SpamOtherTools", {
         Text = "Spam Other Tools",
         Default = false
     }):AddKeyPicker("SpamOtherTools", {
         Default = "X",
-        Text = "Spam Other Tools",
+        Text = "我也不知道这个是啥玩意",
         Mode = shared.Library.IsMobile and "Toggle" or "Hold",
         SyncToggleState = shared.Library.IsMobile
     })
 
     TrollingGroupBox:AddToggle("UpsideDown", {
-        Text = "Upside Down",
+        Text = "倒立",
         Default = false
     })
 
     TrollingGroupBox:AddToggle("Twerk", {
-        Text = "Twerk",
+        Text = "跳舞【开第三人称可以看见】",
         Default = false
     })
 end
@@ -3409,7 +3409,7 @@ local BypassGroupBox = Tabs.Exploits:AddRightGroupbox("绕过") do
     BypassGroupBox:AddDivider()
 
     BypassGroupBox:AddToggle("AnticheatManipulation", {
-        Text = "反作弊控制",
+        Text = "反作弊速度",
         Default = false,
     }):AddKeyPicker("AnticheatManipulationKey", {
         Default = "T",
@@ -3436,7 +3436,7 @@ local BypassGroupBox = Tabs.Exploits:AddRightGroupbox("绕过") do
         Text = "无限十字架",
         Default = false,
         Visible = not Script.IsFools,
-        Tooltip = "丢失/趋势",
+        Tooltip = "可能会失效/死亡哦",
         Risky = true
     })
 
@@ -4305,12 +4305,12 @@ elseif Script.IsMines then
 
     local Mines_AutomationGroupBox = Tabs.Floor:AddRightGroupbox("自动化") do
         Mines_AutomationGroupBox:AddButton({
-            Text = "击败door200",
+            Text = "自动门200水泵",
             Func = function()
                 if Script.LatestRoom.Value < 99 then
                     shared.Notify:Alert({
-                        Title = "击败200",
-                        Description = "你没到200...",
+                        Title = "进行200门",
+                        Description = "你没到达指定地方门200...",
                         Time = 5
                     })
 
@@ -4559,14 +4559,14 @@ elseif Script.IsMines then
         Script.Functions.Minecart.DrawNodes()
     end)
 elseif Script.IsBackdoor then
-    local Backdoors_AntiEntityGroupBox = Tabs.Floor:AddLeftGroupbox("反实体") do
+    local Backdoors_AntiEntityGroupBox = Tabs.Floor:AddLeftGroupbox("防实体") do
         Backdoors_AntiEntityGroupBox:AddToggle("AntiHasteJumpscare", {
-            Text = "反Haste跳杀",
+            Text = "移除Haste跳杀",
             Default = false
         })
     end
 
-    local Backdoors_VisualGroupBox = Tabs.Floor:AddRightGroupbox("虚拟") do
+    local Backdoors_VisualGroupBox = Tabs.Floor:AddRightGroupbox("娱乐") do
         Backdoors_VisualGroupBox:AddToggle("HasteClock", {
             Text = "Haste钟表",
             Default = true
@@ -5112,7 +5112,7 @@ local Tabs = Script.Tabs
 --// Main \\--
 local PlayerGroupBox = Tabs.Main:AddLeftGroupbox("玩家") do
     PlayerGroupBox:AddToggle("EnableSpeedHack", {
-        Text = "速度黑客",
+        Text = "极限速度",
         Default = false
     })
 
@@ -5191,17 +5191,17 @@ end
 
 local ReachGroupBox = Tabs.Main:AddLeftGroupbox("范围") do
     ReachGroupBox:AddToggle("DoorReach", {
-        Text = "门范围",
+        Text = "远程开门",
         Default = false
     })
 
     ReachGroupBox:AddToggle("PromptClip", {
-        Text = "Prompt Clip",
+        Text = "远程互动",
         Default = false
     })
 
     ReachGroupBox:AddSlider("PromptReachMultiplier", {
-        Text = "Prompt Reach Multiplier",
+        Text = "设置远程距离",
         Default = 1,
         Min = 1,
         Max = 2,
@@ -5437,42 +5437,42 @@ end
 local ESPTabBox = Tabs.Visuals:AddLeftTabbox() do
     local ESPTab = ESPTabBox:AddTab("透视") do
         ESPTab:AddToggle("DoorESP", {
-            Text = "门",
+            Text = "门透视",
             Default = false,
         }):AddColorPicker("DoorEspColor", {
             Default = Color3.new(0, 1, 1),
         })
     
         ESPTab:AddToggle("ObjectiveESP", {
-            Text = "目标",
+            Text = "钥匙透视",
             Default = false,
         }):AddColorPicker("ObjectiveEspColor", {
             Default = Color3.new(0, 1, 0),
         })
     
         ESPTab:AddToggle("EntityESP", {
-            Text = "实体",
+            Text = "怪物透视",
             Default = false,
         }):AddColorPicker("EntityEspColor", {
             Default = Color3.new(1, 0, 0),
         })
     
         ESPTab:AddToggle("ItemESP", {
-            Text = "物品",
+            Text = "物品透视",
             Default = false,
         }):AddColorPicker("ItemEspColor", {
             Default = Color3.new(1, 0, 1),
         })
     
         ESPTab:AddToggle("ChestESP", {
-            Text = "箱子",
+            Text = "箱子透视",
             Default = false,
         }):AddColorPicker("ChestEspColor", {
             Default = Color3.new(1, 1, 0),
         })
     
         ESPTab:AddToggle("PlayerESP", {
-            Text = "玩家",
+            Text = "玩家透视",
             Default = false,
         }):AddColorPicker("PlayerEspColor", {
             Default = Color3.new(1, 1, 1),
@@ -5486,7 +5486,7 @@ local ESPTabBox = Tabs.Visuals:AddLeftTabbox() do
         })
     
         ESPTab:AddToggle("GoldESP", {
-            Text = "金",
+            Text = "金币透视",
             Default = false,
         }):AddColorPicker("GoldEspColor", {
             Default = Color3.new(1, 1, 0),
@@ -5537,7 +5537,7 @@ local ESPTabBox = Tabs.Visuals:AddLeftTabbox() do
         })
     
         ESPSettingsTab:AddSlider("ESPTextSize", {
-            Text = "字体尺寸",
+            Text = "字体大小",
             Default = 22,
             Min = 16,
             Max = 26,
@@ -5547,7 +5547,7 @@ local ESPTabBox = Tabs.Visuals:AddLeftTabbox() do
         ESPSettingsTab:AddDivider()
 
         ESPSettingsTab:AddToggle("ESPTracer", {
-            Text = "开启线",
+            Text = "开启线条追踪",
             Default = false
         })
 
@@ -5563,7 +5563,7 @@ local ESPTabBox = Tabs.Visuals:AddLeftTabbox() do
         ESPSettingsTab:AddDivider()
 
         ESPSettingsTab:AddToggle("ESPArrow", {
-            Text = "开启箭头",
+            Text = "使用箭头",
             Default = false
         })
 
@@ -5686,7 +5686,7 @@ local NotifyTabBox = Tabs.Visuals:AddRightTabbox() do
             Default = "Linoria",
             Multi = false,
 
-            Text = "啥玩意"
+            Text = "提示样子"
         })
     end
 end
@@ -5745,17 +5745,17 @@ local SelfTabBox = Tabs.Visuals:AddRightTabbox() do
 
     local EffectsTab = SelfTabBox:AddTab("效果") do
         EffectsTab:AddToggle("NoGlitchEffect", {
-            Text = "无故障效果",
+            Text = "移除故障跳脸",
             Default = false
         })
 
         EffectsTab:AddToggle("NoVoidEffect", {
-            Text = "无虚空效果",
+            Text = "移除虚空传送",
             Default = false
         })
 
         EffectsTab:AddToggle("NoSpiderJumpscare", {
-            Text = "无蜘蛛跳杀",
+            Text = "移除蜘蛛跳杀",
             Default = false
         })
     end
@@ -8542,7 +8542,7 @@ function Script.Functions.DoorESP(room)
         local opened = door:GetAttribute("Opened")
         local locked = room:GetAttribute("RequiresKey")
 
-        local doorState = if opened then "[打开的]" elseif locked then "[上锁的]" else ""
+        local doorState = if opened then "[打开]" elseif locked then "[上锁的]" else ""
         local doorIdx = Script.Functions.RandomString()
 
         local doorEsp = Script.Functions.ESP({
@@ -8749,7 +8749,7 @@ function Script.Functions.GoldESP(gold)
     Script.Functions.ESP({
         Type = "Gold",
         Object = gold,
-        Text = string.format("金 [%s]", gold:GetAttribute("GoldValue")),
+        Text = string.format("金币 [%s]", gold:GetAttribute("GoldValue")),
         Color = Options.GoldEspColor.Value
     })
 end
@@ -8769,7 +8769,7 @@ function Script.Functions.GuidingLightEsp(guidance)
     local guidanceEsp = Script.Functions.ESP({
         Type = "Guiding",
         Object = part,
-        Text = "引导",
+        Text = "引导之光",
         Color = Options.GuidingLightEspColor.Value
     })
 
@@ -10167,13 +10167,13 @@ task.spawn(function()
     
     local function createAddonTab(hasAddons: boolean)
         if not AddonTab then
-            AddonTab = shared.Window:AddTab("Addons [BETA]")
+            AddonTab = shared.Window:AddTab("插件[测试版]")
         end
         
         AddonTab:UpdateWarningBox({
             Visible = true,
-            Title = "WARNING",
-            Text =  (if not hasAddons then "Your addons FOLDER is empty!" else "This tab is for UN-OFFICIAL addons made for mspaint. We are not responsible for what addons you will use. You are putting yourself AT RISK since you are executing third-party scripts.")
+            Title = "警告",
+            Text =  (if not hasAddons then "你的插件文件夹是空的！" else "This tab is for UN-OFFICIAL addons made for mspaint. We are not responsible for what addons you will use. You are putting yourself AT RISK since you are executing third-party scripts.")
         })
     end
 
