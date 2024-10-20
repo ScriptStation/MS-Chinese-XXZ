@@ -9,6 +9,26 @@ OrionLib:MakeNotification({
 sound.SoundId = "rbxassetid://4590662766"
 sound:Play()
 
+OrionLib:MakeNotification({
+                    Name = "mspaint V3汉化",
+                    Content = "汉化作者:R-Exploit",
+                    Time = 5
+                })    
+                
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+
+OrionLib:MakeNotification({
+                    Name = "mspaint V3汉化",
+                    Content = "测试员:NIDO_MUNCISEEK--",
+                    Time = 5
+                })    
+                
+                local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://4590662766"
+sound:Play()
+
 wait(1)
 
 OrionLib:MakeNotification({
