@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 OrionLib:MakeNotification({
                     Name = "mspaint V3汉化",
                     Content = "欢迎使用【修复补缺:小玄奘】",
-                    Time = 5
+                    Time = 10
                 })    
                 
                 local sound = Instance.new("Sound", workspace)
@@ -12,7 +12,7 @@ sound:Play()
 OrionLib:MakeNotification({
                     Name = "mspaint V3汉化",
                     Content = "汉化作者:R-Exploit",
-                    Time = 5
+                    Time = 10
                 })    
                 
                 local sound = Instance.new("Sound", workspace)
@@ -22,7 +22,7 @@ sound:Play()
 OrionLib:MakeNotification({
                     Name = "mspaint V3汉化",
                     Content = "测试员:NIDO_MUNCISEEK--",
-                    Time = 5
+                    Time = 10
                 })    
                 
                 local sound = Instance.new("Sound", workspace)
@@ -34,7 +34,7 @@ wait(1)
 OrionLib:MakeNotification({
                     Name = "你的注入器："..identifyexecutor(),
                     Content = "测试",
-                    Time = 5
+                    Time = 10
                 })
                 
                 local sound = Instance.new("Sound", workspace)
